@@ -1,0 +1,31 @@
+
+docker run busybox:1.24 echo "hello world"
+docker run -i -t busybox:1.24 ls /
+
+# run the docker in interactive mode
+docker run -i -t <imagename>:<tag> 
+      ex: docker run -i -t busybox:1.24
+
+# list the current container
+docker ps 
+
+# list all the containers
+docker ps -a
+
+# sleeps the container for 1 sec (not sure) 
+docker run --rm busybox:sleep 1
+
+# creates a container with name provided
+docker run --name <container-name> <image-name>:<tag> 
+
+#runs the container in detached mode(-d) returns the container id 
+docker run -d <image-name>:<tag> 
+
+# display low level info on the container or image 
+docker inspect <container-id> 
+
+#get the logs    http:level-up.one/deep-dive-into-docker-logging 
+docker logs <container-id>
+
+#commit command saves the changes we made to the docker container's file system to a new image
+docker commit <container-id> <repository_name>:<tag>
