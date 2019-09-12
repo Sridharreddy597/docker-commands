@@ -1,3 +1,33 @@
+#To pull a Docker image
+$ docker pull nginx
+
+#To run ngnix
+$ docker run ngnix
+
+#To access on local machine, we will have to expose port
+$ docker run -p 8000:80 nginx
+
+#To stop a container, we can run following command.
+$ docker stop <container_id>
+
+#To remove container
+$ docker rm <contaner_id>
+
+#You can run a container in background by passing it -d option.
+$ docker run -p 8000:80 -d nginx
+
+#You can view logs using the following command.
+$ docker logs -f container_id
+
+#To view all the running containers
+$ docker ps
+
+#To view all the containers irrespective of their status
+$ docker ps --all
+
+#To remove all the stopped containers
+$ docker container prune
+
 
 docker run busybox:1.24 echo "hello world"
 docker run -i -t busybox:1.24 ls /
